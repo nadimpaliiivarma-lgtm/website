@@ -52,10 +52,12 @@ export default function Home() {
               </p>
 
               <ul className="space-y-3 text-gray-700 mb-8">
+                
                 <li>✔ Advanced Zirconia & Ceramic Restorations</li>
                 <li>✔ Smile Designing & Cosmetic Dentistry</li>
                 <li>✔ Dental Implants & Full Mouth Rehabilitation</li>
                 <li>✔ Patient-Centered Modern Care</li>
+                <li>✔ With Experience of 13+ Years</li>
               </ul>
 
               <button className="bg-[#0F3D3E] hover:bg-[#1A5F61] text-white px-8 py-3 rounded-2xl shadow-md transition-all duration-300">

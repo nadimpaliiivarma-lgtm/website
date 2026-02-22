@@ -4,8 +4,6 @@ import { Layout } from "../components/Layout";
 import { ContactCTA } from "../components/sections/ContactCTA";
 import { Button } from "../components/ui/Button";
 
-const beforeImage = "/images/zirconia-case1-before.jpeg";
-const afterImage = "/images/zirconia-case1-after.jpeg";
 const workingImage = "/images/working.jpeg";
 
 const cases = [
@@ -15,27 +13,35 @@ const cases = [
     category: "Cosmetic Dentistry",
     description:
       "Comprehensive aesthetic correction improving alignment, color, and symmetry for a confident smile.",
+    before: "/images/full-smile-rehabilitation-before.jpeg",
+    after: "/images/full-smile-rehabilitation-after.jpeg",
   },
   {
     id: 2,
+    title: "Correction of Midline in Single Day with Cosmetic Treatment",
+    category: "Smile Design",
+    description:
+      "Precise cosmetic enhancement aligning midline symmetry and smile balance in a single appointment.",
+    before: "/images/midline-correction-before.jpeg",
+    after: "/images/midline-correction-after.jpeg",
+  },
+  {
+    id: 3,
     title: "Anterior Crown Restoration",
     category: "Restorative Dentistry",
     description:
       "Precision-crafted crown restoring strength and natural translucency in the smile zone.",
+    before: "/images/zirconia-case1-before.jpeg",
+    after: "/images/zirconia-case1-after.jpeg",
   },
   {
-    id: 3,
+    id: 4,
     title: "Posterior Bridge Treatment",
     category: "Fixed Prosthodontics",
     description:
       "Functional rehabilitation restoring chewing efficiency and long-term structural stability.",
-  },
-  {
-    id: 4,
-    title: "Smile Line Correction",
-    category: "Smile Design",
-    description:
-      "Balanced proportions and improved aesthetics with minimally invasive preparation techniques.",
+    before: "/images/zirconia-case2-before.jpeg",
+    after: "/images/zirconia-case2-after.jpeg",
   },
 ];
 
@@ -73,7 +79,7 @@ export default function Cases() {
                 <div className="grid grid-cols-2">
                   <div className="relative">
                     <img
-                      src={beforeImage}
+                      src={item.before}
                       alt="Before treatment"
                       className="w-full h-64 object-cover"
                     />
@@ -84,7 +90,7 @@ export default function Cases() {
 
                   <div className="relative">
                     <img
-                      src={afterImage}
+                      src={item.after}
                       alt="After treatment"
                       className="w-full h-64 object-cover"
                     />
@@ -144,21 +150,6 @@ export default function Cases() {
                   ensures comfort, durability, and seamless aesthetics tailored
                   to each patient.
                 </p>
-
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-3 text-gray-700">
-                    <span className="w-2 h-2 rounded-full bg-[#C6A969]" />
-                    Minimally invasive preparation
-                  </li>
-                  <li className="flex items-center gap-3 text-gray-700">
-                    <span className="w-2 h-2 rounded-full bg-[#C6A969]" />
-                    Digital precision techniques
-                  </li>
-                  <li className="flex items-center gap-3 text-gray-700">
-                    <span className="w-2 h-2 rounded-full bg-[#C6A969]" />
-                    Long-lasting restorative materials
-                  </li>
-                </ul>
 
                 <Button variant="primary" size="md">
                   Schedule Appointment
