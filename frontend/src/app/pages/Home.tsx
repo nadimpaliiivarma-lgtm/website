@@ -21,7 +21,7 @@ export default function Home() {
             {/* Image Side */}
             <div className="relative flex justify-center">
               <img
-                src={`${import.meta.env.BASE_URL}images/doctor-profile2.jpeg`}
+                src="images/doctor-profile2.jpeg"
                 alt="Doctor Profile"
                 className="rounded-3xl shadow-2xl w-full max-w-md object-cover"
               />
@@ -74,4 +74,7 @@ export default function Home() {
     </Layout>
   );
 }
+
+
+
 
