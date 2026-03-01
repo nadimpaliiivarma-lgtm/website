@@ -72,8 +72,8 @@ export default function Home() {
 
             <div className="relative flex justify-center">
               <img
-                src="/images/children-home.jpeg"
-                alt="Children Home"
+                src="/images/doctor-profile2.jpeg"
+                alt="Doctor Profile"
                 className="rounded-3xl shadow-2xl w-full max-w-md object-cover"
               />
 
