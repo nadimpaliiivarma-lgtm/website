@@ -16,110 +16,144 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
-    }, 2000);
+    }, 4000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   return (
     <Layout>
       <div className="flex flex-col">
 
-        {/* ===== SLIDING HERO SECTION ===== */}
-        <section className="relative h-screen w-full overflow-hidden">
+        {/* ===== HERO FADE + ZOOM SECTION ===== */}
+        <section className="relative w-full min-h-[90vh] mt-24 overflow-hidden">
 
-          {/* Sliding Background */}
-          <div
-            className="absolute inset-0 flex transition-transform duration-1000 ease-in-out"
-            style={{ transform: `translateX(-${current * 100}%)` }}
-          >
-            {images.map((img, index) => (
+          {images.map((img, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                index === current ? "opacity-100 z-10" : "opacity-0 z-0"
+              }`}
+            >
               <div
-                key={index}
-                className="min-w-full h-screen bg-cover bg-center"
+                className={`w-full h-full bg-cover bg-center transition-transform duration-[4000ms] ${
+                  index === current ? "scale-110" : "scale-100"
+                }`}
                 style={{ backgroundImage: `url(${img})` }}
               />
-            ))}
-          </div>
+            </div>
+          ))}
 
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-black/40 z-20"></div>
 
-          {/* Text Content */}
-          <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6 text-white">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Advanced Dental Care With Precision
+          <div className="relative z-30 flex flex-col items-center justify-center text-center px-6 min-h-[90vh] text-white">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              Little Smiles. Big Happiness.
             </h1>
 
-            <p className="text-lg md:text-xl max-w-2xl mb-8">
-              Providing painless, modern, and personalized dental treatments
-              for beautiful and confident smiles.
+            <p className="max-w-3xl text-lg md:text-xl leading-relaxed">
+              Every little smile holds a world of dreams, laughter, and happiness.
+              We believe caring for tiny teeth is about more than just treatment —
+              it’s about creating a safe, cheerful space where children feel
+              comfortable, confident, and excited to smile. Because when kids
+              feel happy at the dentist, their smiles shine even brighter.
             </p>
 
-            <button className="bg-[#C6A969] hover:bg-[#b39556] text-white px-8 py-3 rounded-2xl shadow-lg transition-all duration-300">
+            <button className="mt-8 bg-[#C6A969] hover:bg-[#b39556] text-white px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105">
               Book Appointment
             </button>
           </div>
-
         </section>
 
-        {/* Services Section */}
-        <Services />
-
-        {/* DOCTOR PROFILE SECTION */}
-        <section className="py-24 bg-gray-50">
+        {/* ===== 3D SPHERE KIDS SECTION (NEW) ===== */}
+        <section className="py-24 bg-gradient-to-b from-white to-blue-50 overflow-hidden">
           <div className="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
-            <div className="relative flex justify-center">
-              <img
-                src="/images/doctor-profile2.jpeg"
-                alt="Doctor Profile"
-                className="rounded-3xl shadow-2xl w-full max-w-md object-cover"
-              />
-
-              <div className="absolute -bottom-6 -right-6 bg-[#0F3D3E] text-white px-6 py-3 rounded-2xl shadow-lg">
-                <p className="text-sm font-semibold">15+ Years</p>
-                <p className="text-xs">Experience</p>
+            {/* 3D Sphere */}
+            <div className="flex justify-center">
+              <div className="sphere-wrapper">
+                <div className="sphere">
+                  <img src="/images/home-pics.jpeg" alt="Kids Smile 1" />
+                  <img src="/images/home-pics2.jpeg" alt="Kids Smile 2" />
+                  <img src="/images/home-pics3.jpeg" alt="Kids Smile 3" />
+                </div>
               </div>
             </div>
 
+            {/* Text */}
             <div>
-              <h2 className="text-4xl font-bold text-[#0F3D3E] mb-4">
-                Dr. Varma
+              <h2 className="text-4xl font-bold text-[#0F3D3E] mb-6">
+                Little Smiles Matter
               </h2>
 
-              <p className="text-lg text-[#C6A969] font-medium mb-6">
-                BDS, MDS – Endodontist and Smile Design Expert
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Every little smile holds a world of dreams, laughter, and happiness.
+                We believe caring for tiny teeth is about more than just treatment —
+                it’s about creating a safe, cheerful space where children feel
+                comfortable, confident, and excited to smile. Because when kids
+                feel happy at the dentist, their smiles shine even brighter.
               </p>
-
-              <p className="text-gray-600 leading-relaxed mb-6">
-                With extensive experience in advanced restorative and cosmetic
-                dentistry, Dr. Varma specializes in zirconia crowns,
-                dental bridges, smile designing, and complete oral rehabilitation.
-                He is committed to delivering precision-based, painless dental care
-                using modern digital technology.
-              </p>
-
-              <ul className="space-y-3 text-gray-700 mb-8">
-                <li>✔ Advanced Zirconia & Ceramic Restorations</li>
-                <li>✔ Smile Designing & Cosmetic Dentistry</li>
-                <li>✔ Dental Implants & Full Mouth Rehabilitation</li>
-                <li>✔ Patient-Centered Modern Care</li>
-                <li>✔ With Experience of 15+ Years</li>
-              </ul>
-
-              <button className="bg-[#0F3D3E] hover:bg-[#1A5F61] text-white px-8 py-3 rounded-2xl shadow-md transition-all duration-300">
-                Book Appointment
-              </button>
             </div>
 
           </div>
         </section>
 
+        {/* Other Sections */}
+        <Services />
         <TrustIndicators />
         <ContactCTA />
 
       </div>
+
+      {/* ===== SPHERE CSS ===== */}
+      <style jsx>{`
+        .sphere-wrapper {
+          perspective: 1200px;
+          width: 320px;
+          height: 320px;
+        }
+
+        .sphere {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          transform-style: preserve-3d;
+          animation: rotateSphere 20s infinite linear;
+        }
+
+        .sphere img {
+          position: absolute;
+          width: 220px;
+          height: 220px;
+          object-fit: cover;
+          border-radius: 20px;
+          left: 50px;
+          top: 50px;
+          box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .sphere img:nth-child(1) {
+          transform: rotateY(0deg) translateZ(160px);
+        }
+
+        .sphere img:nth-child(2) {
+          transform: rotateY(120deg) translateZ(160px);
+        }
+
+        .sphere img:nth-child(3) {
+          transform: rotateY(240deg) translateZ(160px);
+        }
+
+        @keyframes rotateSphere {
+          from {
+            transform: rotateY(0deg);
+          }
+          to {
+            transform: rotateY(360deg);
+          }
+        }
+      `}</style>
+
     </Layout>
   );
 }
