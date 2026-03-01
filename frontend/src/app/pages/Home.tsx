@@ -26,7 +26,7 @@ export default function Home() {
       <div className="flex flex-col">
 
         {/* ===== HERO FADE + ZOOM SECTION ===== */}
-        <section className="relative w-full min-h-[90vh] mt-24 overflow-hidden">
+        <section className="relative w-full min-h-[35vh] mt-6 overflow-hidden">
 
           {images.map((img, index) => (
             <div
