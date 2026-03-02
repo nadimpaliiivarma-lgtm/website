@@ -31,7 +31,6 @@ export default function About() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-              {/* IMAGE */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -47,7 +46,6 @@ export default function About() {
                 </div>
               </motion.div>
 
-              {/* INFO */}
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -71,18 +69,15 @@ export default function About() {
                   </p>
 
                   <p>
-                    He served as a Professor at Sree Sai Dental College for 12 years, contributing extensively 
-                    to dental education and mentoring future dental professionals.
+                    He served as a Professor at Sree Sai Dental College for 12 years.
                   </p>
 
                   <p>
-                    He also served as the President of the Indian Dental Association (IDA), Srikakulam 
-                    from 2019 to 2021.
+                    He also served as the President of the Indian Dental Association (IDA), Srikakulam from 2019 to 2021.
                   </p>
 
                   <p>
-                    Currently, he works full-time at Varma Multispeciality Dental Clinic, providing 
-                    comprehensive dental treatments with modern techniques and patient-focused care.
+                    Currently, he works full-time at Varma Multispeciality Dental Clinic providing modern, patient-focused care.
                   </p>
                 </div>
 
@@ -125,11 +120,9 @@ export default function About() {
                 <p className="text-[#C6A969] font-medium mt-1">
                   Oral & Maxillofacial Surgeon
                 </p>
-
                 <p className="text-gray-600 mt-4">
                   Completed BDS in 2012 and MDS in 2016 from Oxford Dental College, Bangalore.
-                  With over 10 years of expertise in facial surgery and aesthetics, he specializes
-                  in advanced surgical procedures and facial reconstruction.
+                  With over 10 years of expertise in facial surgery and aesthetics.
                 </p>
               </div>
 
@@ -146,11 +139,47 @@ export default function About() {
                 <p className="text-[#C6A969] font-medium mt-1">
                   Pediatric Dentist & Academician
                 </p>
-
                 <p className="text-gray-600 mt-4">
                   Completed BDS (2006–2011) and MDS in Pedodontics & Preventive Dentistry (2013–2016).
-                  Currently working as a Reader in Pedodontics with extensive clinical and teaching experience,
-                  specializing in children's dental care.
+                  Specializing in children's dental care.
+                </p>
+              </div>
+
+              {/* DR RAMOJI */}
+              <div className="bg-white rounded-2xl shadow-lg p-8 text-left">
+                <img
+                  src="/images/ramoji.jpeg"
+                  alt="Dr. Ramoji Rao Lenka"
+                  className="w-full h-80 object-cover rounded-xl mb-6"
+                />
+                <h3 className="text-2xl font-bold text-[#0F3D3E]">
+                  Dr. Ramoji Rao Lenka
+                </h3>
+                <p className="text-[#C6A969] font-medium mt-1">
+                  Orthodontist & Invisible Aligners Specialist
+                </p>
+                <p className="text-gray-600 mt-4">
+                  IOS Certified Orthodontist specializing in invisible aligners, fixed braces and jaw alignment treatments.
+                  Completed BDS and MDS in Orthodontics with expertise in smile makeovers.
+                </p>
+              </div>
+
+              {/* DR RAJESH */}
+              <div className="bg-white rounded-2xl shadow-lg p-8 text-left">
+                <img
+                  src="/images/rajesh.jpeg"
+                  alt="Dr. Rajesh Akula"
+                  className="w-full h-80 object-cover rounded-xl mb-6"
+                />
+                <h3 className="text-2xl font-bold text-[#0F3D3E]">
+                  Dr. Rajesh Akula
+                </h3>
+                <p className="text-[#C6A969] font-medium mt-1">
+                  Prosthodontist & Crown & Bridge Specialist
+                </p>
+                <p className="text-gray-600 mt-4">
+                  University Gold Medallist in Prosthodontics with expertise in crowns, bridges,
+                  dentures and implant-supported restorations. Experienced academician and researcher.
                 </p>
               </div>
 
