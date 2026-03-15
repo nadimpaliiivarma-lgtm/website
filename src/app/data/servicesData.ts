@@ -4,7 +4,12 @@ export interface Service {
   image: string;
   description: string;
   youtubeLink: string;
+  disclaimer: string;
 }
+
+// professional disclaimer used for all services
+const videoDisclaimer =
+  "Disclaimer: The videos provided on this website are intended solely for general educational and informational purposes for patients. Varma's Multispeciality Dental Clinic does not claim ownership of these videos and does not assume responsibility for any inaccuracies, omissions, or misinterpretations contained within them. Patients are advised to consult the clinic directly for professional dental advice and personalized treatment recommendations.";
 
 // helper to convert normal or shorts youtube link to embed format
 const convertToEmbed = (url: string) => {
@@ -31,7 +36,9 @@ export const servicesData: Service[] = [
     youtubeLink: convertToEmbed(
       "https://youtube.com/shorts/A9qqZ4syBrY?si=7wy9f_tA4Pvyuzob"
     ),
+    disclaimer: videoDisclaimer,
   },
+
   {
     id: "correction-of-midline",
     title: "Correction of Midline",
@@ -41,7 +48,9 @@ export const servicesData: Service[] = [
     youtubeLink: convertToEmbed(
       "https://youtu.be/-O5KAd2S8aA?si=Eb5MnHHfJ2Rrke8E"
     ),
+    disclaimer: videoDisclaimer,
   },
+
   {
     id: "anterior-crown-restoration",
     title: "Anterior Crown Restoration",
@@ -51,7 +60,9 @@ export const servicesData: Service[] = [
     youtubeLink: convertToEmbed(
       "https://youtube.com/shorts/e-afGhDfGrU?si=KIDisvPq98En0Ecf"
     ),
+    disclaimer: videoDisclaimer,
   },
+
   {
     id: "posterior-bridge-treatment",
     title: "Posterior Bridge Treatment",
@@ -61,7 +72,9 @@ export const servicesData: Service[] = [
     youtubeLink: convertToEmbed(
       "https://youtu.be/9jptx6l9PL4?si=eQalg15ltWoDiCXA"
     ),
+    disclaimer: videoDisclaimer,
   },
+
   {
     id: "tooth-whitening",
     title: "Tooth Whitening",
@@ -71,7 +84,9 @@ export const servicesData: Service[] = [
     youtubeLink: convertToEmbed(
       "https://youtube.com/shorts/HjnHS_rdoY8?si=faL69Uh2JaQa3vQD"
     ),
+    disclaimer: videoDisclaimer,
   },
+
   {
     id: "dental-implants",
     title: "Dental Implants",
@@ -81,5 +96,6 @@ export const servicesData: Service[] = [
     youtubeLink: convertToEmbed(
       "https://youtube.com/shorts/x2DrVwAqzZo?si=6ZNKVvr--oExoqFW"
     ),
+    disclaimer: videoDisclaimer,
   },
 ];

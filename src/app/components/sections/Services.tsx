@@ -11,8 +11,7 @@ const services = [
   {
     title: "Crowns & Bridges",
     description: "Restore function and appearance with high-quality zirconia and ceramic options.",
-    // using a generic icon since specific Crown might not be available or imported
-    icon: <Activity className="w-6 h-6" /> 
+    icon: <Activity className="w-6 h-6" />
   },
   {
     title: "Smile Restoration",
@@ -39,17 +38,24 @@ const services = [
 export function Services() {
   return (
     <section className="py-24 bg-white relative overflow-hidden">
-      {/* Subtle Background Pattern */}
+
+      {/* Background Pattern */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#0F3D3E_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.03] pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
+
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#0F3D3E] mb-4">Comprehensive Dental Expertise</h2>
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#0F3D3E] mb-4">
+            Comprehensive Dental Expertise
+          </h2>
+
           <p className="text-gray-600 text-lg">
             Dr. Varma offers a full spectrum of dental services, combining advanced technology with compassionate care to ensure your long-term oral health.
           </p>
         </div>
 
+        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
@@ -63,13 +69,25 @@ export function Services() {
               <div className="w-14 h-14 rounded-xl bg-emerald-50 flex items-center justify-center text-[#0F3D3E] mb-6 group-hover:scale-110 transition-transform duration-300 group-hover:bg-[#0F3D3E] group-hover:text-[#C6A969]">
                 {service.icon}
               </div>
-              <h3 className="font-serif text-xl font-bold text-[#0F3D3E] mb-3">{service.title}</h3>
+
+              <h3 className="font-serif text-xl font-bold text-[#0F3D3E] mb-3">
+                {service.title}
+              </h3>
+
               <p className="text-gray-500 leading-relaxed group-hover:text-gray-600">
                 {service.description}
               </p>
             </motion.div>
           ))}
         </div>
+
+        {/* Video Disclaimer */}
+        <div className="max-w-4xl mx-auto mt-16">
+          <div className="bg-yellow-50 border-l-4 border-yellow-500 text-yellow-900 p-5 rounded-lg text-sm leading-relaxed shadow-sm">
+            <strong>Disclaimer:</strong> The videos presented on this website are provided solely for general educational and informational purposes for patients. Varma's Multispeciality Dental Clinic does not claim ownership of the videos and does not assume responsibility for any inaccuracies, omissions, or interpretations contained within them. Patients are encouraged to consult Dr. Nadimpalli Varma directly for professional dental advice, diagnosis, and personalized treatment recommendations.
+          </div>
+        </div>
+
       </div>
     </section>
   );

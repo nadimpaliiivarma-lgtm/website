@@ -47,15 +47,14 @@ export function Navbar() {
             className="h-18 w-auto object-contain"
           />
           <div className="hidden md:block">
-            <h1 className="font-serif text-lg font-bold text-[#0F3D3E] leading-tight">
-              Varma's
+            <h1 className="font-serif text-2xl font-bold text-[#0F3D3E] leading-tight">
+               Varma's
             </h1>
-            <p className="text-[15px] tracking-widest uppercase text-[#C6A969] font-medium">
-              Dental Clinic
+            <p className="text-[18px] tracking-widest uppercase text-[#C6A969] font-medium">
+             Dental Clinic
             </p>
           </div>
         </Link>
-
         {/* DESKTOP MENU */}
         <div className="hidden md:flex items-center gap-6">
           <div className="flex items-center gap-5">

@@ -14,6 +14,15 @@ export default function Contact() {
 
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
 
+          {/* Doctor Image in Corner */}
+          <div className="absolute right-10 bottom-0 hidden md:block">
+            <img
+              src="/images/doctor-profile2.jpeg"
+              alt="Dr. Nadimpalli Varma"
+              className="w-40 lg:w-50 object-contain drop-shadow-2xl"
+            />
+          </div>
+
           <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
 
             <h1 className="font-serif text-5xl md:text-6xl font-bold mb-6">

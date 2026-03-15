@@ -1,51 +1,57 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { servicesData } from "../data/servicesData";
 
 export default function ServiceDetails() {
   const { id } = useParams();
-  const service = servicesData.find((item) => item.id === id);
+
+  const service = servicesData.find((s) => s.id === id);
 
   if (!service) {
-    return <div className="pt-32 text-center">Service not found</div>;
+    return <div className="p-20 text-center">Service not found</div>;
   }
 
   return (
-    <div className="pt-32 pb-20 container mx-auto px-4">
-      <div className="max-w-5xl mx-auto">
+    <div className="bg-white min-h-screen pt-20">
 
-        <img
-          src={service.image}
-          alt={service.title}
-          className="w-full h-[400px] object-cover rounded-2xl shadow-lg mb-10"
-        />
+      <div className="container mx-auto px-4 md:px-6 max-w-4xl">
 
-        <h1 className="text-4xl font-bold text-[#0F3D3E] mb-6 font-serif">
+        {/* Title */}
+        <h1 className="font-serif text-4xl md:text-5xl font-bold text-[#0F3D3E] mb-6 text-center">
           {service.title}
         </h1>
 
-        <p className="text-gray-600 text-lg leading-relaxed mb-12">
+        {/* Image */}
+        <div className="mb-8 flex justify-center">
+          <img
+            src={service.image}
+            alt={service.title}
+            className="rounded-xl shadow-lg max-h-[400px] object-cover"
+          />
+        </div>
+
+        {/* Description */}
+        <p className="text-gray-700 text-lg leading-relaxed mb-6 text-center">
           {service.description}
         </p>
 
-        <div className="aspect-video mb-12">
-          <iframe
-            src={service.youtubeLink}
-            title="Service Video"
-            className="w-full h-full rounded-2xl shadow-md"
-            allowFullScreen
-          ></iframe>
+        {/* Disclaimer BELOW description */}
+        <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-8 rounded-md text-yellow-900 text-sm leading-relaxed">
+          <strong>Disclaimer:</strong> {service.disclaimer}
         </div>
 
-        <div className="text-center">
-          <Link
-            to="/services"
-            className="inline-block bg-[#0F3D3E] text-white px-8 py-3 rounded-full hover:bg-[#C6A969] transition"
-          >
-            Back to Services
-          </Link>
+        {/* YouTube Video */}
+        <div className="aspect-video w-full overflow-hidden rounded-xl shadow-lg">
+          <iframe
+            src={service.youtubeLink}
+            title={service.title}
+            className="w-full h-full"
+            allowFullScreen
+          />
         </div>
+
       </div>
+
     </div>
   );
 }
