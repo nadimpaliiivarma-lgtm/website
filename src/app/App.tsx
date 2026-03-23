@@ -12,27 +12,17 @@ import Loader from "./components/loader";
 import "../styles/fonts.css";
 import "../styles/index.css";
 
-// A wrapper to detect location changes and show loader on navigation
 function LoaderWrapper({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // When location changes, show loader briefly
     setLoading(true);
-
-    // Hide loader after short delay (simulate loading time)
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 800); // Adjust delay as needed
-
+    const timer = setTimeout(() => setLoading(false), 800);
     return () => clearTimeout(timer);
   }, [location]);
 
-  if (loading) {
-    return <Loader />;
-  }
-
+  if (loading) return <Loader />;
   return <>{children}</>;
 }
 
@@ -52,4 +42,3 @@ export default function App() {
     </Router>
   );
 }
-
